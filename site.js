@@ -2,7 +2,8 @@ const examples = [
   ['Slide practice','05-practice','The presenter sees the current slide, cues for explaining its key ideas and a suggestion for what to say next.'],
   ['Rehearsal','04-rehearsal-press','The presenter delivers the Benefits slide while a virtual audience member listens.'],
   ['Audience Q&A','06-audience-qa','A virtual audience member asks what evidence supports a claim. The presenter can replay the question or record a spoken answer.'],
-  ['Evaluation report','07-full-presentation-report','One complete sample report, from the overall evaluation and rubric scores to slide-level feedback, the action plan and report inputs. The scores illustrate this presentation, not a study outcome.']
+  ['Evaluation report','07-full-presentation-report','One complete sample report, from the overall evaluation and rubric scores to slide-level feedback, the action plan and report inputs. The scores illustrate this presentation, not a study outcome.'],
+  ['Slide Revision Suggestions','08-slide-revision-suggestions','Slide-by-slide revision suggestions with reasons, editing instructions, and a downloadable editing prompt.']
 ];
 const el = id => document.getElementById(id);
 function select(i) {
@@ -30,4 +31,5 @@ examples.forEach(([label],i) => {
   };
   el('tabs').append(b);
 });
-select(new URLSearchParams(location.search).get('view') === 'report' ? 3 : 0);
+const requestedView = new URLSearchParams(location.search).get('view');
+select(requestedView === 'report' ? 3 : requestedView === 'revision' ? 4 : 0);
