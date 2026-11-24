@@ -2,12 +2,15 @@ const examples = [
   ['Slide practice','05-practice','The presenter sees the current slide, cues for explaining its key ideas and a suggestion for what to say next.'],
   ['Rehearsal','04-rehearsal-press','The presenter delivers the Benefits slide while a virtual audience member listens.'],
   ['Audience Q&A','06-audience-qa','A virtual audience member asks what evidence supports a claim. The presenter can replay the question or record a spoken answer.'],
-  ['Presentation score','02-presentation-score','A sample report breaks down one talk across five dimensions. The scores illustrate this presentation, not a study outcome.'],
-  ['Action plan','03-action-plan','Revision suggestions address the talk itself. Training suggestions give the presenter an exercise for the next rehearsal.']
+  ['Evaluation report','07-full-presentation-report','One complete sample report, from the overall evaluation and rubric scores to slide-level feedback, the action plan and report inputs. The scores illustrate this presentation, not a study outcome.']
 ];
 const el = id => document.getElementById(id);
 function select(i) {
   const [label,file,description] = examples[i];
+  const isReport = file === '07-full-presentation-report';
+  el('viewer').classList.toggle('report-view', isReport);
+  el('viewer').setAttribute('aria-label', isReport ? 'Complete evaluation report' : label);
+  el('viewer').scrollTop = 0;
   el('shot').src = el('large').href = 'assets/' + file + '.png';
   el('shot').alt = label + ': ' + description;
   el('label').textContent = 'Figure 3' + String.fromCharCode(97 + i) + '. ' + label + '.'; el('desc').textContent = description;
@@ -27,4 +30,4 @@ examples.forEach(([label],i) => {
   };
   el('tabs').append(b);
 });
-select(0);
+select(new URLSearchParams(location.search).get('view') === 'report' ? 3 : 0);

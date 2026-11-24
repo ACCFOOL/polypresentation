@@ -15,3 +15,8 @@ figcaption,caption{font-size:13px;line-height:1.55;color:var(--muted)}figcaption
 @media(max-width:740px){.wrap{width:calc(100% - 38px)}header{padding:35px 0 24px}nav{gap:13px}.abstract-grid,.gallery,.results{grid-template-columns:1fr;gap:20px}.abstract-grid figure{max-width:455px;margin:auto}#tabs{flex-direction:row;flex-wrap:wrap;gap:5px}#tabs button{padding:5px 9px;border:1px solid var(--line);font-size:13px}section{padding:31px 0}#shot{max-height:340px}}
 @media(max-width:510px){.wrap{width:calc(100% - 30px)}.bar{min-height:49px;gap:6px;flex-wrap:wrap}.brand{font-size:14px;gap:6px}.brand span{width:20px;height:20px;font-size:14px}nav{gap:10px}nav a{font-size:11px}nav a[href="#abstract"]{display:none}header{padding:29px 0 20px}h1{font-size:29px}h2{font-size:24px}.authors{font-size:13px;margin-top:13px}.institution{font-size:11px}.prose{font-size:15px}.links{margin-top:17px}.demo{border-radius:7px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+#viewer{background:#f7f9fb;overflow:auto;scrollbar-gutter:stable}
+#viewer:focus-visible{outline:3px solid #2973c9;outline-offset:3px}
+#viewer.report-view{height:min(560px,70svh);min-height:280px;overscroll-behavior-y:contain;scrollbar-color:#8999aa #eaf0f5}
+#viewer.report-view #shot{width:100%;max-height:none;height:auto;object-fit:initial}
+figcaption #large{background:none;white-space:nowrap}
