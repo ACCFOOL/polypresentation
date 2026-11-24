@@ -1,0 +1,30 @@
+const examples = [
+  ['Slide practice','05-practice','The presenter sees the current slide, cues for explaining its key ideas and a suggestion for what to say next.'],
+  ['Rehearsal','04-rehearsal-press','The presenter delivers the Benefits slide while a virtual audience member listens.'],
+  ['Audience Q&A','06-audience-qa','A virtual audience member asks what evidence supports a claim. The presenter can replay the question or record a spoken answer.'],
+  ['Presentation score','02-presentation-score','A sample report breaks down one talk across five dimensions. The scores illustrate this presentation, not a study outcome.'],
+  ['Action plan','03-action-plan','Revision suggestions address the talk itself. Training suggestions give the presenter an exercise for the next rehearsal.']
+];
+const el = id => document.getElementById(id);
+function select(i) {
+  const [label,file,description] = examples[i];
+  el('shot').src = el('large').href = 'assets/' + file + '.png';
+  el('shot').alt = label + ': ' + description;
+  el('label').textContent = 'Figure 3' + String.fromCharCode(97 + i) + '. ' + label + '.'; el('desc').textContent = description;
+  el('panel').setAttribute('aria-labelledby','tab-' + i);
+  Array.from(el('tabs').children).forEach((b,n) => {
+    b.setAttribute('aria-selected',String(n === i)); b.tabIndex = n === i ? 0 : -1;
+  });
+}
+examples.forEach(([label],i) => {
+  const b = document.createElement('button'); b.id = 'tab-' + i; b.textContent = label;
+  b.setAttribute('role','tab'); b.setAttribute('aria-controls','panel');
+  b.onclick = () => select(i);
+  b.onkeydown = e => {
+    const n = examples.length;
+    const j = {ArrowRight:(i+1)%n,ArrowDown:(i+1)%n,ArrowLeft:(i+n-1)%n,ArrowUp:(i+n-1)%n,Home:0,End:n-1}[e.key];
+    if (j === undefined) return; e.preventDefault(); select(j); el('tab-'+j).focus();
+  };
+  el('tabs').append(b);
+});
+select(0);

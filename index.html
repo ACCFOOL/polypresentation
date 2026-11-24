@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PolyPresentation: A Multimodal AI Platform for Slide-Aware Iterative Presentation Practice</title>
+<link rel="stylesheet" href="site.css"></head>
+<body id="top"><a href="#abstract" class="skip">Skip to abstract</a>
+<div class="mast"><div class="wrap bar"><a class="brand" href="#top"><span aria-hidden="true">P</span>PolyPresentation</a>
+<nav aria-label="Page sections"><a href="#abstract">Abstract</a><a href="#design">System design</a><a href="#interface">Interface</a><a href="#evaluation">Evaluation</a></nav></div></div>
+<main class="wrap"><header>
+<h1>PolyPresentation: A Multimodal AI Platform for Slide-Aware Iterative Presentation Practice</h1>
+<p class="authors">Chen Chen, Jihao Li, Zhiyuan Wen, Tianhui Zhang, Di Zou, Jiannong Cao</p>
+<p class="institution">The Hong Kong Polytechnic University, Hong Kong, China</p>
+<div class="links"><a class="live" href="https://149.104.27.68/">Live system</a><a href="https://youtu.be/MmWj9O_PJxw">YouTube</a></div>
+</header>
+<a class="demo" href="https://youtu.be/MmWj9O_PJxw"><img src="assets/04-rehearsal-press.png" alt="A presenter rehearses the Benefits slide with a virtual audience."><span><i aria-hidden="true"></i>Watch the demo</span></a>
+<section id="abstract"><h2>Abstract</h2><div class="abstract-grid">
+<p class="prose" id="paper-abstract">Presentations are essential for students, researchers, and professionals to communicate ideas persuasively, yet delivering them effectively requires repeated practice that coordinates content, delivery, visual materials, and audience interaction. Existing AI-assisted rehearsal tools provide scalable feedback, but they often treat presentations as single-run delivery performances, offering limited support for linking feedback to the slide deck or planning what to practice in the next iteration. To address this gap, we introduce PolyPresentation, a multimodal AI platform for slide-aware iterative presentation practice. PolyPresentation organizes slide-by-slide practice, full rehearsal, audience Q&amp;A, and feedback into a unified practice loop, using slide-grounded evidence to help presenters diagnose performance issues and prepare for subsequent practice. We evaluate PolyPresentation through a rubric-based comparison with four baseline systems on 20 academic presentation rehearsals, and additionally assess its alignment with human ratings. Results suggest that PolyPresentation provides more actionable, context-aware, and practice-oriented support for improving presentations. The demonstration video is available at <a href="https://youtu.be/MmWj9O_PJxw">https://youtu.be/MmWj9O_PJxw</a>.</p>
+<figure><a href="assets/01-workflow.png"><img src="assets/01-workflow.png" alt="The cycle of practice, rehearsal, feedback and slide revision"></a><figcaption><strong>Figure 1.</strong> The presentation practice and revision cycle.</figcaption></figure>
+</div></section>
+<section id="design"><h2>System design</h2><p class="prose note">Presenters practise individual slides before rehearsing the full talk and answering audience questions. The platform links speech, timing and slide content to identify moments to revisit. Its report separates revisions to the presentation from exercises for the next rehearsal.</p>
+<figure><a class="frame" href="assets/system.png"><img src="assets/system.png" loading="lazy" alt="PolyPresentation system workflow from preparation to feedback"></a><figcaption><strong>Figure 2.</strong> How rehearsal evidence informs feedback and slide-level revisions.</figcaption></figure></section>
+<section id="interface"><h2>Interface examples</h2><div class="gallery"><div id="tabs" role="tablist" aria-label="Interface examples"></div>
+<figure id="panel" role="tabpanel" tabindex="0"><a class="frame" id="large" href="assets/05-practice.png" aria-label="Open full-size interface screenshot"><img id="shot" src="assets/05-practice.png" alt="Guided slide practice"></a><figcaption><strong id="label">Figure 3a. Slide practice.</strong> <span id="desc">Cues for explaining the current slide.</span></figcaption></figure></div></section>
+<section id="evaluation"><h2>Evaluation</h2><p class="prose note">The study compared feedback from PolyPresentation and four baseline systems on 20 academic presentation rehearsals. It also compared platform scores with human ratings across five rubric dimensions.</p>
+<div class="results"><div><h3>Agreement with human ratings</h3><table><caption>Pooled across rubric dimensions</caption><tbody><tr><th>Pearson correlation</th><td>0.836</td></tr><tr><th>Quadratic weighted kappa</th><td>0.830</td></tr><tr><th>Mean absolute error (0–10 scale)</th><td>0.34</td></tr></tbody></table></div>
+<div><h3>Feedback quality</h3><table><caption>Selected PolyPresentation scores</caption><tbody><tr><th>Coverage</th><td>8.15</td></tr><tr><th>Actionability</th><td>7.49</td></tr><tr><th>Weighted overall score</th><td>7.54</td></tr></tbody></table></div></div></section>
+</main><footer class="wrap"><span>PolyPresentation</span><a href="#top">Back to top</a></footer><script src="site.js"></script></body></html>
